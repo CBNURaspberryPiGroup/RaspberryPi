@@ -36,3 +36,31 @@ Password: raspberry
 
 ### 3.원격으로 라즈베리파이연결하기
 > 모니터가 없다면 라즈베이파이를 sd카드와 연결해서 부팅해도 상태를 알 수 가 없다.  이때는 컴퓨터에 원격으로 접속하여 제어해야한다.
+
+![그림1](https://user-images.githubusercontent.com/76804251/130786560-e21b0570-6c76-4680-ab17-ab031395029c.png)
+
+
+> sd카드를 다시 컴퓨터와 연결하여 boot에 들어가 다음과 같이 2개의 파일을 만든다. (새로만들기 > 택스트파일 > 이름바꾸기)
+- 이떄 파일명은 확장자까지 포함해야한다
+
+
+```
+- ssh  
+- wpa_supplicant.conf
+```   
+> ssh 파일은 이름만 있고 내용은 없지만, wpa_supplicant.conf 파일은 파일명을 바꾸기전에 아래의 내용을 넣어야한다.
+
+
+```
+country=US ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev 
+update_config=1 
+network={
+ ssid="WIFI 이름" 
+psk="WIFI 비밀번호" 
+scan_ssid=1 
+}
+```
+> 위의 사진처럼 완료되었으면 sd카드를 분리하고 라즈베리파이와 연결하면된다.
+
+#### putty 다운받기
+> 라즈베리파이와 컴퓨터의 원격연결을 통해 제어할려면 [putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
