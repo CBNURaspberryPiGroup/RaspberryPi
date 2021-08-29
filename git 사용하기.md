@@ -41,7 +41,7 @@ sudo apt-get install git
 ### 2. 레포지터리 만들기
 git은 간단하게 하면 3가지의 공간으로 나눌수 있다.
 
-|------|---|---|
 |working directory|staging area|.git directory|
+|------|---|---|
 |파일 작업공간|저장준비|버전저장소| 
 
