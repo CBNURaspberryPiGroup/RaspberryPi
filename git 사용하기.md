@@ -56,10 +56,14 @@ sudo apt-get install git
  ```
  git config --global user.name "your name"
  ```
+ ![image](https://user-images.githubusercontent.com/76804251/131278593-30579893-3c97-46fe-ae83-8390f3e8c030.png)
+
   - 유저 아이디 설정
  ```
  git config --global user.email "your email"
  ```
+ ![image](https://user-images.githubusercontent.com/76804251/131278653-f9782604-762f-4213-8db6-aaa6ea1ef5d6.png)
+
  > git에 가입한 이메일로 설정 해야됨
  
  설정한것 확인하기
@@ -67,6 +71,9 @@ sudo apt-get install git
  git config --list
  
  ```
+ ![image](https://user-images.githubusercontent.com/76804251/131278707-658de641-7a1f-49a4-b93a-3cea3e531e26.png)
+> 밑쪽을 보면 설정한 유저이름과 아이디를 확인할 수 있다.
+
 #### 깃 로컬 레포지토리 만들기
 먼저 내 컴퓨터에 버전을 관리할 저장소를 만들어야한다. 앞에서 실행한 git bash에 원하는 곳으로 이동하여 다음의 명령어를 입력해보자
 ```
