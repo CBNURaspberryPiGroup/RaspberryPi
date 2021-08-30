@@ -107,9 +107,98 @@ git status
 ```
 git commit -m "first commit"
 ```
+![image](https://user-images.githubusercontent.com/76804251/131284919-b0ffa7f3-b401-48ab-ad7d-d28b9252f236.png)
+
 > ""사이에는 원하는 코멘트를 써주면 된다.
 이렇게 하면 **.git directory**에 자신의 파일이 저장된것이다.
 
 ### 4. 깃허브와 연동하기
 내가 저장해놓은 파일들을 다른사람들과 공유하고 싶으면 깃허블르 이용하면 된다.  
 우선 [깃허브]()에들어가 회원가입을 한다음 새로운 레포지터리를 만든다.
+![image](https://user-images.githubusercontent.com/76804251/131284369-becbda57-bbd7-42ff-b255-01ecb2a08edc.png)
+만들고나면 이런게 나오는데 이대로 따라하면 된다.
+![image](https://user-images.githubusercontent.com/76804251/131284384-c8afee68-f9b7-422b-9697-e59ec502be48.png)
+현제 우리는 커밋까지 완료된 상태이기때문에 내 깃허브와 연동만 하면된다.
+```
+git remote add origin https://github.com/wlans01/git.git
+```
+> 뒤에나오는 주소는 자신의 깃주소를 입력하자
+다음의 명령어로 연결이 잘 되었는지 확인이 가능하다
+```
+git remote -v
+```
+![image](https://user-images.githubusercontent.com/76804251/131284782-1cf97c2b-523a-4cce-8efd-c5a0990367df.png)
+
+만약 이전에 다른 주소로 연결되있어서 주소을 바꾸고 싶다면 주소를 지웠다가 다시 연결하면 된다.
+```
+git remote remove
+git remote add origin https://github.com/wlans01/git.git(원하는 다른주소)
+```
+
+연결이 알맞게 된것을 확인했으면 푸쉬를 통해 서버에 올리면 된다
+```
+git push origin master
+```
+
+![image](https://user-images.githubusercontent.com/76804251/131284991-14e11a6f-64e5-4bb1-810f-26fbdba37f07.png)
+> 뒤에 master은 브런치의 이름이다. 브런치 이름에 맞게 쓰면됨
+
+깃허브 페이지로 와보면 내가 올린파일이 생성된것을 확인할 수 있다.
+
+![image](https://user-images.githubusercontent.com/76804251/131285108-eec2a928-3735-4011-9422-ad1c529e1331.png)
+
+### 5.계정인증하기
+깃허브에 파일을올리기위해 주소와 연결하고 푸쉬를 하게되면 유저아이디와 인증토큰을 입력하라고 요구할떄가 있다.  
+브라우저로 간편하게 인증이 가능하지만 그러지 못할경우 토큰을 생성해서 인증해야한다.
+
+#### 인증토큰 생성하기
+깃허브에 로그인해서 들어가면 오른쪽 상단에 setting을 찾아 들어간다.
+![image](https://user-images.githubusercontent.com/76804251/131285265-34167ca3-c55d-4f08-ab2e-dd6f992d9f78.png)
+
+메뉴들을 보면 중간 아래쯤에 developer settings
+
+![image](https://user-images.githubusercontent.com/76804251/131285337-4bfa7b5a-d990-458c-98f7-d553f159e92d.png)
+
+personal acess tokens 에서 새토큰을 생성한다.
+> 이때 비밀번호 물어본다. 비번치면됨
+
+![image](https://user-images.githubusercontent.com/76804251/131285408-b335b884-7763-4172-ba12-8850e517c540.png)
+
+note 부분에 토큰 이름정하고
+원하는 기능권한을 체크한다.
+![image](https://user-images.githubusercontent.com/76804251/131285499-322f5d21-ef2a-4186-8555-1a3a6d8a6e5b.png)
+
+> 풀 푸쉬 목적만 있다면 repo만 체크하면됨 아마도
+
+이렇게 생성된 토큰을 이용하여 인증을 하면된다.  
+name은 깃허브가입한 이메일  
+password는 토큰을 입력하면됨
+
+### 6.깃허브로 팀프로젝트 진행하기
+앞으로 많이하게될 팀프로젝트는 대부분 깃허브를 통해서 할것이다 열심히 연습하자
+
+#### 그룹으로부터 코드가져오기
+처음 할 일은 그룹이나 팀의 github 주소를 에서 코드를 받아오는것이다.
+```
+git clone github주소
+```
+> 위의 명령어를 입력하면 팀에있는 코드를 전부 가져오게 된다.   
+> 받아온 코드르 이용하여 각자가 담당한 부분을 수정하고 작업하면 된다.
+
+필요한 작업이 끝나고 깃허브에 다시 공유하기위에 main 브런치에다가 push를 그대로 해버리면 큰일이난다.  
+메인 브런치는 최종버전이기 때문에 그전에 확인을 하고 최종적으로 올리는 곳이다.
+그러므로 새로운 브런치를 만들어서 push를 하자
+
+```
+git checkout -b 브렌치이름
+```
+![image](https://user-images.githubusercontent.com/76804251/131286532-5733dae0-cc9e-4cfa-a85d-8ff81942abc6.png)
+
+> 브런치 이름이 master 에서 main으로 바뀐것을 확일 할 수 있다.
+바뀐 브런치로 이전과 같이 저장하고 push 해주면된다.
+
+```
+git add .
+git commit -m "first commit"
+git push origin 브렌치이름
+```
