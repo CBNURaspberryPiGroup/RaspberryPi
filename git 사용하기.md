@@ -202,3 +202,9 @@ git add .
 git commit -m "first commit"
 git push origin 브렌치이름
 ```
+![image](https://user-images.githubusercontent.com/76804251/131287074-a358c8cc-9d92-457e-8b1c-ced16ae5c4f2.png)
+> 마스터 브런치 말고 메인브런치가 새로 생긴것을 볼 수 있다.
+
+이다음에 pull reaust를 할 수 있는데 이것을 하면 메인브런치와 합쳐진다.  
+그다음 현제 작업하고 있는 작업물을 커밋하다음 pull을 하면 내 작업물이랑 다른사람의 작업물이 합쳐진다. 개꿀 
+
