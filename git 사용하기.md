@@ -51,6 +51,22 @@ sudo apt-get install git
 **.git directory**는 원하는 버전을 커밋하는 곳이다. 한마디로 최종 최최종 최최최종 파일들을 저장하고 관리하는공간.   
 > 지금은 간단게하 알기만 하고 추후 배워가면서 이해해보도록 하자  
 
+#### git 환경설정하기
+ - 유저 이름설정
+ ```
+ git config --global user.name "your name"
+ ```
+  - 유저 아이디 설정
+ ```
+ git config --global user.email "your email"
+ ```
+ > git에 가입한 이메일로 설정 해야됨
+ 
+ 설정한것 확인하기
+ ```
+ git config --list
+ 
+ ```
 #### 깃 로컬 레포지토리 만들기
 먼저 내 컴퓨터에 버전을 관리할 저장소를 만들어야한다. 앞에서 실행한 git bash에 원하는 곳으로 이동하여 다음의 명령어를 입력해보자
 ```
