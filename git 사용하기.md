@@ -63,6 +63,11 @@ sudo apt-get install git
  ![image](https://user-images.githubusercontent.com/76804251/131278707-658de641-7a1f-49a4-b93a-3cea3e531e26.png)
 > 밑쪽을 보면 설정한 유저이름과 아이디를 확인할 수 있다.
 
+os 마다 다르게 설정해야함 줄바꿈 문제
+```
+git config --global core.autocrlf true   원도우    \r\n
+git config --global core.autocrlf input	맥	\n
+```
 ### 3. 레포지터리 만들기
 
 #### git의 전체공간을 간단하게 하면 3가지의 공간으로 나눌수 있다.
